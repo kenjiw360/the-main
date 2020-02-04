@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
+  </head>
+  <script>
+    function submit(){
+      var name = document.getElementById("name").value;
+      name = new SpeechSynthesisUtterance("Get your Rubiks Cube "+name+". Thanks for your order.");
+      window.speechSynthesis.speak(name);
+      window.location = "index.html";
+      if(localStorage.getItem("rubicksLeft")){
+        var number = localStorage.getItem("rubicksLeft");
+        number = parseInt(number);
+        number += -1;
+        localStorage.setItem("rubicksLeft",number);
+      }else{
+        localStorage.setItem("rubicksLeft",59);
+      }
+    }
+  </script>
+  <body>
+    <script src="script.js"></script>
+    <center>
+      <img src="CubiX Rube.jpeg" width="200">
+      <br>
+      <br>
+      <input type="text" placeholder="What's your name?" style="font-size:60px;width:50%;text-align:center;" id="name">
+      <br>
+      <br>
+      <button onclick="submit()">Submit</button>
+    </center>
+  </body>
+</html>
