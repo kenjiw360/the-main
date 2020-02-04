@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
+  </head>
+  <script>
+    function changeDaBeginning(){
+      if(localStorage.getItem("rubicksLeft")){
+        document.getElementById("left").innerHTML = localStorage.getItem("rubicksLeft");
+      }
+    }
+    function goSomewhere(x){
+      window.location = x;
+    }
+  </script>
+  <body onload="changeDaBeginning()">
+    <script src="script.js"></script>
+    <center>
+      <img src="CubiX Rube.jpeg" width="200">
+      <h1 class="numbertext" style="font-size:300px;margin:0px;" id="left">60</h1>
+      <h1 class="text">More to go</h1>
+      <button onclick="goSomewhere('DaActualWebsite.html')">Rent A Rubicks Cube</button>
+    </center>
+  </body>
+</html>
